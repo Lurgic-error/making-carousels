@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: "Lato", sans-serif;
+}
+
+body {
+    padding: 30px;
+}
+
+.carousel {
+    // overflow: hidden;
+    // max-width: 1000px;
+    position: relative;
+
+}
+
+.carousel .carousel__item .carousel__item--hidden {
+    display: none;
+}
+
+.carousel .carousel__item .carousel__item--visible {
+    display: block;
+}
+
+.carousel__img {
+    min-height: 200px;
+    max-height: 600px;
+    width: 100%;
+    // max-width: 600px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel__item--hidden {
+    display: none;
+    animation: fade-out 2.5s;
+}
+
+.carousel__item--visible {
+    display: block;
+    animation: fade 2.5s;
+}
+
+.carousel__actions {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel__btn {
+    padding: 5px 10px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+.carousel__btn--prev {
+    margin-left: 16px;
+}
+
+.carousel__btn--next {
+    margin-right: 16px;
+}
+
+
+
+
+.carousel {
+    // height: ;
+    overflow: hidden;
+
+    .carousel__item {
+        position: relative;
+
+
+        .carousel__caption {
+            position: absolute;
+            padding: 10px 20px;
+            background-color: rgba(59, 53, 53, 0.479);
+            // top: 90px;
+            bottom:20px;
+            left: 50%;
+            transform: translateY(-50%);
+            transform-origin: center;
+            color: white;
+
+            .caption__title {
+                margin-bottom: .25rem;
+            }
+        }
+    }
+}
+
+
+@keyframes fade {
+    0% {
+        // opacity: 0.4;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: all .5s ease-in-out;
+    }
+}
+
+
+@keyframes fade-out {
+    0% {
+        // opacity: 0.4;
+        transform: translateY(0%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(100%);
+        transition: all .5s ease-in-out;
+    }
+}
